@@ -28,6 +28,8 @@ class Calculator:
     def div(self):
         a = self.__try_integer(input('div this: '))
         b = self.__try_integer(input(' to this: ')) 
+        if b == 0:
+            raise ValueError("0 division isn't allowed")
         print(f'{a} / {b} = {a / b}')
 
     def __try_integer(self, s: str) -> int:
